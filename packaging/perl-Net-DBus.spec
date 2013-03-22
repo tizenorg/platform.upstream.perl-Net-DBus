@@ -24,7 +24,7 @@ License:        GPL-2.0+
 %define cpan_name Net-DBus
 Summary:        Perl extension for the DBus message system
 Url:            http://search.cpan.org/dist/Net-DBus/
-Group:          Development/Libraries/Perl
+Group:          Development/Libraries
 Source:         http://www.cpan.org/authors/id/D/DA/DANBERR/%{cpan_name}-%{version}.tar.gz
 BuildRequires:  perl
 BuildRequires:  perl(Test::Pod)
@@ -35,8 +35,6 @@ BuildRequires:  perl-macros
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(pkg-config)
 Requires:       perl(XML::Twig)
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-%{perl_requires}
 
 %description
 Net::DBus provides a Perl API for the DBus message system. The DBus Perl
