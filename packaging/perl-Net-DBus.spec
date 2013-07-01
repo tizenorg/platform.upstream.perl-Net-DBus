@@ -26,6 +26,7 @@ Summary:        Perl extension for the DBus message system
 Url:            http://search.cpan.org/dist/Net-DBus/
 Group:          Development/Libraries
 Source:         http://www.cpan.org/authors/id/D/DA/DANBERR/%{cpan_name}-%{version}.tar.gz
+Source1001: 	perl-Net-DBus.manifest
 BuildRequires:  perl
 BuildRequires:  perl(Test::Pod)
 BuildRequires:  perl(Test::Pod::Coverage)
@@ -50,6 +51,7 @@ are of most relevance.
 
 %prep
 %setup -q -n %{cpan_name}-%{version}
+cp %{SOURCE1001} .
 find . -type f -print0 | xargs -0 chmod 644
 
 %build
@@ -65,6 +67,7 @@ make test
 %perl_gen_filelist
 
 %files -f %{name}.files
+%manifest %{name}.manifest
 %defattr(-,root,root,755)
 %doc AUTHORS CHANGES examples LICENSE Net-DBus.spec README
 
